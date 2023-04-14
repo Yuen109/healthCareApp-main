@@ -12,6 +12,8 @@ const CustomersScreen = ({ navigation }) => {
 
   const addExpenditure = async () => {
     try {
+      if (!description) return alert("Description cannot be empty");
+      if (!amount) return alert("Amount be empty");
       const expenditure = {
         description: description,
         amount: Number(amount),
