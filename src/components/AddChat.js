@@ -76,7 +76,7 @@ const AddChat = () => {
         />
       </View>
       <Button
-        style={tailwind("mt-4")}
+        color="#0235A3"
         onPress={() => handleCreateChatRoom()}
         title="Create Chat Room"
         // buttonStyle={{

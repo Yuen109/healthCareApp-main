@@ -112,7 +112,11 @@ const CustomersScreen = () => {
         value={amount}
         onChangeText={setAmount}
       />
-      <Button title="Add Expenditure" onPress={addExpenditure} />
+      <Button
+        color="#0235A3"
+        title="Add Expenditure"
+        onPress={addExpenditure}
+      />
     </View>
   );
 };
