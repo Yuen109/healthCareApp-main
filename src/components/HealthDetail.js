@@ -158,25 +158,25 @@ const HealthDetail = () => {
       <View>
         <Text style={tailwind("text-lg")}>BMI Chart</Text>
         {/* <Text>{route.params.result}</Text> */}
-        <Text>{bmi}</Text>
+        {/* <Text>{bmi}</Text> */}
         <Chart data={bmiData} />
       </View>
       <View>
         <Text style={tailwind("text-lg")}>Weight Chart</Text>
         {/* <Text>{route.params.weight}</Text> */}
-        <Text>{weights}</Text>
+        {/* <Text>{weights}</Text> */}
         <Chart data={weightData} />
       </View>
       <View>
         <Text style={tailwind("text-lg")}>Height Chart</Text>
         {/* <Text>{route.params.height}</Text> */}
-        <Text>{heights}</Text>
+        {/* <Text>{heights}</Text> */}
         <Chart data={heightData} />
       </View>
       <View>
         <Text style={tailwind("text-lg")}>Fat Rate Chart</Text>
         {/* <Text>{route.params.fatRate}</Text> */}
-        <Text>{fatRates}</Text>
+        {/* <Text>{fatRates}</Text> */}
         <Chart data={fatRateData} />
       </View>
     </ScrollView>

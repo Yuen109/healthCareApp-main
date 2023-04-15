@@ -75,14 +75,14 @@ const AddElderly = () => {
       // await setDoc(doc(db, "Elderly", name), {
       await addDoc(collection(db, "Elderly"), {
         name: name,
-        age: age,
+        age: Number(age),
         gender: gender,
         hobbies: arrayUnion(hobbies),
         bodyComposition: arrayUnion({
-          weight: weight,
-          height: height,
-          fatRate: fat,
-          BMI: result,
+          weight: Number(weight),
+          height: Number(height),
+          fatRate: Number(fat),
+          BMI: Number(result),
           createdAt: date,
         }),
         medicine: arrayUnion(medicine),
