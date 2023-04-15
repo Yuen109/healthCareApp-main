@@ -4,6 +4,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Platform,
+  Button,
 } from "react-native";
 import { useState } from "react";
 import React from "react";
@@ -12,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import { db } from "../../firebase/firebase";
 import { collection, addDoc, arrayUnion } from "firebase/firestore";
 import { useTailwind } from "tailwind-rn/dist";
-import { Button } from "@rneui/base";
+// import { Button } from "@rneui/base";
 
 const AddChat = () => {
   const tailwind = useTailwind();
@@ -69,25 +70,25 @@ const AddChat = () => {
           value={topic}
           onChangeText={setTopic}
           placeholder="Whats on your mind?"
-          style={tailwind("border h-40 rounded-md px-3 py-2")}
+          style={tailwind("border h-36 rounded-md px-3 py-2")}
           multiline={true}
           numberOfLines={4}
         />
       </View>
       <Button
+        style={tailwind("mt-4")}
         onPress={() => handleCreateChatRoom()}
-        title="Post"
-        buttonStyle={{
-          backgroundColor: "#0235A3",
-          borderRadius: 3,
-        }}
-        containerStyle={{
-          width: 100,
-          marginHorizontal: 10,
-          marginVertical: 30,
-        }}
+        title="Create Chat Room"
+        // buttonStyle={{
+        //   backgroundColor: "#0235A3",
+        //   borderRadius: 3,
+        // }}
+        // containerStyle={{
+        //   width: 100,
+        //   marginHorizontal: 10,
+        //   marginVertical: 30,
+        // }}
       />
-      {/* </View> */}
     </KeyboardAvoidingView>
   );
 };
