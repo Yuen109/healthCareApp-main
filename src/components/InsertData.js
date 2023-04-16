@@ -32,6 +32,7 @@ const InsertData = () => {
     route.params.vaccination[route.params.vaccination.length - 1]
   );
 
+  // console.log(route.params.weight);
   // console.log(route.params.hobbies[route.params.hobbies.length - 1]);
 
   const childrenRef = doc(db, "Children", route.params.id);
@@ -95,7 +96,7 @@ const InsertData = () => {
       setFat("");
       setMedicine("");
       setVaccination("");
-      navigation.navigate("Children");
+      navigation.goBack();
     } catch (error) {
       // alert(`An error occurred: ${error.message}`);
       // console.log(error);
@@ -140,7 +141,7 @@ const InsertData = () => {
       setFat("");
       setMedicine("");
       setVaccination("");
-      navigation.navigate("Elderly");
+      navigation.goBack();
     } catch (error) {
       // alert(`An error occurred: ${error.message}`);
       // alert(error.message);
@@ -188,7 +189,7 @@ const InsertData = () => {
           <TextInput
             // id
             required
-            keyboardType="text"
+            keyboardType="numeric"
             value={height}
             onChangeText={setheight}
             placeholder="Enter height in m"
@@ -202,7 +203,7 @@ const InsertData = () => {
           <TextInput
             // id
             required
-            keyboardType="text"
+            keyboardType="numeric"
             value={fat}
             onChangeText={setFat}
             placeholder="Enter fatRate"

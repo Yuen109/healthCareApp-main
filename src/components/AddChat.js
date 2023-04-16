@@ -11,7 +11,7 @@ import React from "react";
 import useAuth from "../../hook/useAuth";
 import { useNavigation } from "@react-navigation/native";
 import { db } from "../../firebase/firebase";
-import { collection, addDoc, arrayUnion } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useTailwind } from "tailwind-rn/dist";
 // import { Button } from "@rneui/base";
 

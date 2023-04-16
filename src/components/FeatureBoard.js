@@ -53,9 +53,10 @@ const FeatureBoard = () => {
           data={chatRooms}
           // keyExtractor={(item) => item.id}
           renderItem={({ item }) => <ChatList chat={item} />}
+          style={tailwind("bg-white mx-2 h-full rounded-lg p-2")}
         />
       ) : (
-        <Text>No chat rooms found</Text>
+        <Text style={tailwind("mx-2")}>No chat rooms found</Text>
       )}
     </>
   );

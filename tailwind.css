@@ -67,6 +67,10 @@
   margin-bottom: 0.5rem
 }
 
+.mb-20 {
+  margin-bottom: 5rem
+}
+
 .mb-4 {
   margin-bottom: 1rem
 }
@@ -105,6 +109,10 @@
 
 .mt-44 {
   margin-top: 11rem
+}
+
+.mb-40 {
+  margin-bottom: 10rem
 }
 
 .flex {
@@ -169,6 +177,14 @@
 
 .w-full {
   width: 100%
+}
+
+.w-3\/4 {
+  width: 75%
+}
+
+.w-3\/5 {
+  width: 60%
 }
 
 .flex-1 {
@@ -269,11 +285,6 @@
   background-color: rgb(67 56 202 / var(--tw-bg-opacity))
 }
 
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity))
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
@@ -282,6 +293,11 @@
 .bg-yellow-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 204 21 / var(--tw-bg-opacity))
+}
+
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity))
 }
 
 .p-1 {

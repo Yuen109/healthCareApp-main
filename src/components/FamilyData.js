@@ -75,7 +75,7 @@ const FamilyData = ({
             deleteElderly();
           }}
         />
-        {/* Edit button */}
+        {/* Edit button -> Modify the basic data */}
         <MaterialIcons
           name="edit"
           size={24}

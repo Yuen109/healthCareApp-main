@@ -32,9 +32,7 @@ const Dashboard = () => {
         {/* The Vertical scroll bar */}
       </View>
       <Text style={tailwind("mx-2 text-lg font-medium")}>Your Chat Rooms</Text>
-      <View style={tailwind("mx-2 h-full bg-white rounded-lg p-2")}>
-        <FeatureBoard />
-      </View>
+      <FeatureBoard />
     </View>
   );
 };

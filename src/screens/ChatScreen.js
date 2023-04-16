@@ -10,7 +10,6 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useTailwind } from "tailwind-rn/dist";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import Message from "../components/Message";
-import messages from "../../assets/data/messages.json";
 import useAuth from "../../hook/useAuth";
 import InputBox from "../components/InputBox";
 import { db } from "../../firebase/firebase";
@@ -36,24 +35,24 @@ const ChatScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
 
+  const roomData = route.params.chat;
+  const isCreator = user.uid === roomData.userId;
+
   useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <TouchableOpacity style={{ marginRight: 5 }} onPress={handleDelete}>
-          <Ionicons name="trash-bin" size={24} color="black" />
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation]);
+    if (isCreator) {
+      navigation.setOptions({
+        headerRight: () => (
+          <TouchableOpacity style={{ marginRight: 5 }} onPress={handleDelete}>
+            <Ionicons name="trash-bin" size={24} color="black" />
+          </TouchableOpacity>
+        ),
+      });
+    }
+  }, [navigation, isCreator]);
 
   useEffect(() => {
     navigation.setOptions({ title: route.params.chat.name });
   }, [route.params.chat.name]);
-
-  // const roomID = route.params.chat.id;
-  // console.log(route.params.chat.messages);
-  const roomData = route.params.chat;
-  // console.log(roomData);
 
   const [messages, setMessages] = useState([]);
 

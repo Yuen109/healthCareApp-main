@@ -3,22 +3,40 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { useTailwind } from "tailwind-rn/dist";
 import { db } from "../../firebase/firebase";
-import { collection, onSnapshot, addDoc, arrayUnion } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  addDoc,
+  arrayUnion,
+  query,
+  where,
+  orderBy,
+} from "firebase/firestore";
 import ChatList from "../components/ChatList";
-import chats from "../../assets/data/chats.json";
+import useAuth from "../../hook/useAuth";
 
 const CommunityScreen = () => {
   const tailwind = useTailwind();
   const [chatRooms, setChatRooms] = useState([]);
+  const { user } = useAuth();
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, "chatRooms"), (snapshot) => {
-      const rooms = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    const chatRoomsCollection = collection(db, "chatRooms");
+
+    const q = query(
+      chatRoomsCollection,
+      // where("userId", "==", user.uid),
+      orderBy("createdAt", "desc")
+    );
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      let rooms = [];
+      querySnapshot.forEach((doc) => {
+        rooms.push({ ...doc.data(), id: doc.id });
+      });
       setChatRooms(rooms);
     });
-
-    return () => unsubscribe();
-  }, []);
+    return () => unsubscribe;
+  }, [user.uid]);
 
   // console.log(chatRooms);
 

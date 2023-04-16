@@ -35,7 +35,6 @@ const UpdateInfo = () => {
   const updateChildren = async () => {
     try {
       if (!name) return alert("Name field cannot be empty");
-      //   Age cannot be larger than 65 to be a child
       if (!age) return alert("Age field cannot be empty");
       if (!gender || (gender != "M" && gender != "F"))
         return alert("Gender field cannot be empty");
@@ -50,7 +49,7 @@ const UpdateInfo = () => {
       setGender("");
       navigation.goBack();
     } catch (error) {
-      alert(error);
+      // alert(error);
     }
   };
 
@@ -58,7 +57,6 @@ const UpdateInfo = () => {
   const updateElderly = async () => {
     try {
       if (!name) return alert("Name field cannot be empty");
-      // Age cannot be larger than 65 to be a child
       if (!age) return alert("Age field cannot be empty");
       if (!gender || (gender != "M" && gender != "F"))
         return alert("Gender field cannot be empty");
@@ -73,7 +71,7 @@ const UpdateInfo = () => {
       setGender("");
       navigation.goBack();
     } catch (error) {
-      alert(error);
+      // alert(error);
     }
   };
   return (

@@ -18,9 +18,6 @@ const Login = () => {
   const navigation = useNavigation();
   const tailwind = useTailwind();
 
-  // const [userInfo, setUserInfo] = useState();
-  // const [auth, setAuth] = useState();
-  // const [requireRefresh, setRequireRefresh] = useState(false);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,8 +43,8 @@ const Login = () => {
         <Text style={tailwind("absolute top-20 text-xl font-bold")}>
           Welcome & Log In
         </Text>
-        <Text style={tailwind("text-lg")}>Step 1: Email Address</Text>
-        <View>
+        <View style={tailwind("w-3/5")}>
+          <Text style={tailwind("text-lg")}>Step 1: Email Address</Text>
           <TextInput
             placeholder="Email"
             onChangeText={(email) => setEmail(email)}
@@ -71,7 +68,10 @@ const Login = () => {
             onPress={() => navigation.navigate("Registration")}
             style={tailwind("mt-2")}
           >
-            <Text>Don't have an account? Create now</Text>
+            <Text>
+              Don't have an account?
+              <Text style={tailwind("text-sky-700 ")}> Create Now</Text>
+            </Text>
           </TouchableOpacity>
         </View>
         {/* <StatusBar style="auto" /> */}
