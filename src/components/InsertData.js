@@ -211,14 +211,14 @@ const InsertData = () => {
         </View>
         {/* Input medicine of the family member */}
         <View style={tailwind("p-2")}>
-          <Text>Medicine:</Text>
+          <Text>Medical History:</Text>
           <TextInput
             // id
             required
             keyboardType="text"
             value={medicine}
             onChangeText={setMedicine}
-            placeholder="Enter medicine"
+            placeholder="Enter medical history"
           />
         </View>
         {/* Input height of the family member */}

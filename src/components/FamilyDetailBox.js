@@ -131,7 +131,9 @@ const FamilyDetailBox = ({
       >
         {medicine ? (
           <>
-            <Text style={tailwind("text-lg text-sky-700")}>Medicine </Text>
+            <Text style={tailwind("text-lg text-sky-700")}>
+              Medical History
+            </Text>
             <Text>{medicine[medicine.length - 1]}</Text>
           </>
         ) : (

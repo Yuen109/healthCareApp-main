@@ -212,7 +212,7 @@ const AddElderly = () => {
         {/* Input medicine of the family member */}
         <View style={tailwind("p-2")}>
           <Text>
-            Medicine History:<Text style={tailwind("text-red-600")}>*</Text>
+            Medical History:<Text style={tailwind("text-red-600")}>*</Text>
           </Text>
           <TextInput
             // id
@@ -220,7 +220,7 @@ const AddElderly = () => {
             keyboardType="text"
             value={medicine}
             onChangeText={setMedicine}
-            placeholder="Enter your medicine history"
+            placeholder="Enter your medical history"
           />
         </View>
         {/* Input vaccination of the family member */}
