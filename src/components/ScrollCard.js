@@ -3,16 +3,16 @@ import React from "react";
 import { useTailwind } from "tailwind-rn/dist";
 import { useNavigation } from "@react-navigation/native";
 
-const ScrollCard = ({ img, title, heading, discription }) => {
+const ScrollCard = ({ img, title, heading, description }) => {
   const tailwind = useTailwind();
   const navigation = useNavigation();
 
-  // console.log(discription);
+  // console.log(description);
 
   return (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate("Description", { title, heading, discription })
+        navigation.navigate("Description", { title, heading, description })
       }
       style={tailwind("relative mr-2")}
     >

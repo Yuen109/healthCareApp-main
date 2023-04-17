@@ -11,13 +11,13 @@ const ScrollCardDescriptionScreen = () => {
   useEffect(() => {
     navigation.setOptions({ title: route.params.title });
   }, [route.params.title]);
-  //   console.log(route.params.discription);
+  //   console.log(route.params.description);
   return (
     <ScrollView style={tailwind("mx-2 ")}>
       <Text style={tailwind("text-lg font-medium text-sky-700")}>
         {route.params.heading}
       </Text>
-      <Text style={tailwind("")}>{route.params.discription}</Text>
+      <Text style={tailwind("")}>{route.params.description}</Text>
     </ScrollView>
   );
 };
