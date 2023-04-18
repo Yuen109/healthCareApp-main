@@ -15,14 +15,22 @@ const Registration = () => {
   const auth = getAuth();
 
   const handleCreateUser = async () => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
+    if (password !== passwordConfirm) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      // Signed in
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
