@@ -90,11 +90,6 @@
 			"marginBottom": 8
 		}
 	},
-	"mb-20": {
-		"style": {
-			"marginBottom": 80
-		}
-	},
 	"mb-4": {
 		"style": {
 			"marginBottom": 16
@@ -143,11 +138,6 @@
 	"mt-44": {
 		"style": {
 			"marginTop": 176
-		}
-	},
-	"mb-40": {
-		"style": {
-			"marginBottom": 160
 		}
 	},
 	"flex": {
@@ -210,6 +200,11 @@
 			"width": "91.666667%"
 		}
 	},
+	"w-3/5": {
+		"style": {
+			"width": "60%"
+		}
+	},
 	"w-40": {
 		"style": {
 			"width": 160
@@ -230,21 +225,16 @@
 			"width": "100%"
 		}
 	},
-	"w-3/4": {
-		"style": {
-			"width": "75%"
-		}
-	},
-	"w-3/5": {
-		"style": {
-			"width": "60%"
-		}
-	},
 	"flex-1": {
 		"style": {
 			"flexGrow": 1,
 			"flexShrink": 1,
 			"flexBasis": "0%"
+		}
+	},
+	"grow": {
+		"style": {
+			"flexGrow": 1
 		}
 	},
 	"flex-row": {
@@ -290,6 +280,14 @@
 	"self-end": {
 		"style": {
 			"alignSelf": "flex-end"
+		}
+	},
+	"rounded": {
+		"style": {
+			"borderTopLeftRadius": 4,
+			"borderTopRightRadius": 4,
+			"borderBottomRightRadius": 4,
+			"borderBottomLeftRadius": 4
 		}
 	},
 	"rounded-full": {
@@ -340,6 +338,15 @@
 	"border-b": {
 		"style": {
 			"borderBottomWidth": 1
+		}
+	},
+	"border-gray-400": {
+		"style": {
+			"--tw-border-opacity": 1,
+			"borderTopColor": "rgb(156 163 175 / var(--tw-border-opacity))",
+			"borderRightColor": "rgb(156 163 175 / var(--tw-border-opacity))",
+			"borderBottomColor": "rgb(156 163 175 / var(--tw-border-opacity))",
+			"borderLeftColor": "rgb(156 163 175 / var(--tw-border-opacity))"
 		}
 	},
 	"border-gray-500": {
@@ -393,12 +400,6 @@
 			"backgroundColor": "rgb(250 204 21 / var(--tw-bg-opacity))"
 		}
 	},
-	"bg-red-300": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(252 165 165 / var(--tw-bg-opacity))"
-		}
-	},
 	"p-1": {
 		"style": {
 			"paddingTop": 4,
@@ -423,6 +424,14 @@
 			"paddingLeft": 12
 		}
 	},
+	"p-4": {
+		"style": {
+			"paddingTop": 16,
+			"paddingRight": 16,
+			"paddingBottom": 16,
+			"paddingLeft": 16
+		}
+	},
 	"px-2": {
 		"style": {
 			"paddingLeft": 8,
@@ -433,6 +442,18 @@
 		"style": {
 			"paddingLeft": 12,
 			"paddingRight": 12
+		}
+	},
+	"px-4": {
+		"style": {
+			"paddingLeft": 16,
+			"paddingRight": 16
+		}
+	},
+	"py-1": {
+		"style": {
+			"paddingTop": 4,
+			"paddingBottom": 4
 		}
 	},
 	"py-2": {
