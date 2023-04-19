@@ -1,4 +1,10 @@
-import { View, Text, FlatList, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import { useTailwind } from "tailwind-rn/dist";
 import { useNavigation } from "@react-navigation/native";
@@ -21,34 +27,52 @@ const ChildrenScreen = () => {
   const { user } = useAuth();
 
   const [childData, setChildData] = useState([]);
-  // console.log("Child Data:", childData);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // To show children in the screen
   useEffect(() => {
-    // Get children from db
-    const q = query(
-      collection(db, "Children"),
-      where("parentId", "==", user.uid)
-    );
-    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
-      let childData = [];
-      // Loop through the data and push to the childData array
-      QuerySnapshot.forEach((doc) => {
-        childData.push({ ...doc.data(), id: doc.id });
+    const childrenCollection = collection(db, "Children");
+
+    let q = query(childrenCollection, where("parentId", "==", user.uid));
+
+    if (searchQuery !== "") {
+      q = query(
+        childrenCollection,
+        where("name", ">=", searchQuery),
+        where("name", "<=", searchQuery + "\uf8ff"),
+        where("parentId", "==", user.uid)
+      );
+    }
+
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      let children = [];
+      querySnapshot.forEach((doc) => {
+        children.push({ ...doc.data(), id: doc.id });
       });
-      setChildData(childData);
+      setChildData(children);
     });
-    return () => unsubscribe;
-  }, []);
+    return () => unsubscribe();
+  }, [user.uid, searchQuery]);
 
   // console.log(childData);
 
   return (
     <View>
-      <FlatList
-        data={childData}
-        renderItem={({ item }) => <FamilyData data={item} />}
-      />
+      <View style={tailwind("bg-white px-4 py-2")}>
+        <TextInput
+          placeholder="Search Children"
+          onChangeText={setSearchQuery}
+          value={searchQuery}
+          style={tailwind("border border-gray-400 px-2 py-1 rounded")}
+        />
+      </View>
+      {childData.length > 0 ? (
+        <FlatList
+          data={childData}
+          renderItem={({ item }) => <FamilyData data={item} />}
+        />
+      ) : (
+        <Text style={tailwind("bg-white h-full p-2")}>No children found</Text>
+      )}
       <TouchableOpacity
         onPress={() => navigation.navigate("AddChildren")}
         style={tailwind("m-2")}
